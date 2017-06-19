@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>联合利丰保理管理系统</title>
+    
+    <!-- 引入插件样式 -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"  />
+    <link href="js/lib/jquery-toast-plugin/jquery.toast.min.css" rel="stylesheet"/>
+    <!-- 引入全局样式 -->
+    <!-- <link rel="stylesheet"  type="text/css" href="css/style.css"> -->
+	
+	<!-- 引入当前页面样式 -->
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+
+
+</head>
+
+<body>
+	<header>
+		<div class="header-container">
+			<div class="logo"></div>
+		</div>
+    </header>
+
+    <section>
+    	<div class="content">
+			<div class="login">
+				<div class="heading">
+		            <h1 class="title">系统登录</h1>
+		        </div>
+			    <form action="" name="loginForm" id="loginForm" novalidate="novalidate">
+			        <div class="login-wrap">
+			        	<div class="form-row">
+				            <input type="text" id="username" name="username" 
+				            	class="form-control" placeholder="用户名：" autofocus>
+			        	</div>
+						<div class="form-row">
+				            <input type="password" id="password" name="password"
+				            	class="form-control" placeholder="密&nbsp;&nbsp;&nbsp;码：">
+						</div>
+			            <div class="codeDiv">
+			            	<input type="text" id="captcha" name="captcha" class="form-control" placeholder="验证码：">
+			            	<div class="codeBg">
+			            		<img src="" id="codeImg" border="0">
+			            	</div>
+			            </div>
+			            <button class="btn btn-lg btn-block" type="button" id="loginBtn">立即登录</button>
+			        </div>
+			    </form>
+			</div>
+    	</div>
+    </section>
+
+    <footer>
+        <p>深圳联合保理有限公司版权所有&nbsp;&nbsp;&nbsp;粤ICP备11089480号</p>
+    </footer>
+
+	<!-- 引入第三方类库 -->
+	<script type="text/javascript" src="js/lib/jquery/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap/bootstrap-3.3.6.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootbox.min.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-toast-plugin/jquery.toast.min.js"></script>
+	<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+	<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+	<!-- 引入自定义工具类 -->
+	<script type="text/javascript" src="js/common/toast.js"></script>
+	<script type="text/javascript" src="js/common/http.js"></script>
+	<script type="text/javascript" src="js/common/jsUtils.js"></script>
+	
+	<!-- 引入当前页面脚本 -->
+	<script type="text/javascript" src="js/app/modules/login/login.js"></script>
+	<script type="text/javascript">
+		//定义全局的变量
+		var webcontext = '';
+	</script>
+</html>

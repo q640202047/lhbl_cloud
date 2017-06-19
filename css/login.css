@@ -1,0 +1,210 @@
+/*-------------------------------
+    样式重置
+-------------------------------*/
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+/*-------------------------------
+    Header顶部区域
+-------------------------------*/
+
+body header {
+    flex: 0 0 auto;
+    height: 100px;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+body header div.header-container {
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+body header div.header-container div.logo {
+    height: 56px;
+    width: 337px;
+    /*background-color: #ccc;*/
+    background-image: url('../images/logo.jpg');
+    background-repeat: no-repeat;
+}
+/*-------------------------------
+    Section内容区域
+-------------------------------*/
+
+body section {
+    flex: 1 0 auto;
+    background-color: #b6131b;
+    display: flex;
+    justify-content: center;
+}
+
+body section div.content {
+    width: 1000px;
+    background-image: url('../images/dl-banner.jpg');
+    background-repeat: no-repeat;
+    align-items: stretch;
+    background-position: center;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+body section div.content div.login {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 354px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+body section div.content div.login form.form-signin {
+    max-width: 330px;
+    margin: 100px auto;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+body section div.content div.login div.heading {
+    position: relative;
+}
+
+body section div.content div.login div.heading h1.title {
+    color: #868686;
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-family: monospace;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 1.6px;
+    margin-bottom: 20px;
+}
+
+body section div.content div.login div.heading h1.title::before {
+    content: "";
+    border-top: 1px solid #ccc;
+    display: block;
+    position: absolute;
+    width: 110px;
+    top: 10px;
+    left: 0;
+}
+
+body section div.content div.login div.heading h1.title::after {
+    content: "";
+    border-top: 1px solid #ccc;
+    display: block;
+    position: absolute;
+    width: 110px;
+    top: 10px;
+    right: 0;
+}
+/*登录框表单*/
+
+body section div.content div.login form div.login-wrap {}
+
+body section div.content div.login form div.login-wrap div.form-row,
+body section div.content div.login form div.login-wrap div.codeDiv {
+    margin-bottom: 12px;
+}
+
+body section div.content div.login form div.login-wrap div.form-row label,
+body section div.content div.login form div.login-wrap div.codeDiv label {
+    color: #E88129;
+}
+
+body section div.content div.login form div.login-wrap div.form-row input[type="text"],
+body section div.content div.login form div.login-wrap div.form-row input[type="password"],
+body section div.content div.login form div.login-wrap div.codeDiv input[type="text"],
+body section div.content div.login form div.login-wrap div.codeDiv div.codeBg {
+    height: 42px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    font-size: 15px;
+}
+
+body section div.content div.login form div.login-wrap div.form-row input[type="text"]::placeholder,
+body section div.content div.login form div.login-wrap div.form-row input[type="password"]::placeholder,
+body section div.content div.login form div.login-wrap div.codeDiv input[type="text"]::placeholder {
+    color: #868686;
+}
+
+body section div.content div.login form div.login-wrap div.codeDiv {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+body section div.content div.login form div.login-wrap div.codeDiv input[type="text"] {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    flex: 0 0 auto;
+    width: 65%;
+    /*display: inline;*/
+}
+
+body section div.content div.login form div.login-wrap div.codeDiv div.codeBg {
+    flex: 0 0 auto;
+    width: 35%;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 0px;
+    cursor: pointer;
+}
+
+body section div.content div.login form div.login-wrap div.codeDiv div.codeBg img#codeImg {
+    width: 100%;
+    height: 100%;
+    border: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+body section div.content div.login form div.login-wrap button#loginBtn {
+    background-color: #E21F27;
+    color: #fff;
+}
+
+body section div.content div.login form div.login-wrap button#loginBtn:hover {
+    background-color: #FF2933;
+}
+/*-------------------------------
+    Footer底部区域
+-------------------------------*/
+
+body footer {
+    flex: 0 0 auto;
+    height: 70px;
+    width: 100%;
+    color: #474747;
+    text-align: center;
+}
+
+body footer p {
+    margin: 0px;
+    height: 70px;
+    line-height: 70px;
+}
+/*分割线*/
+
+p.cutline {
+    border-left: 1px solid #ccc;
+    height: 30px;
+    margin-left: 17px;
+    margin-right: 17px;
+}

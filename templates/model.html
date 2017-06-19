@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>联合保理后台管理系统</title>
+
+		<!--common-->
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-responsive-2.3.2.css">
+		<link rel="stylesheet" type="text/css" href="../fonts/css/font-awesome.min.css">
+		
+		<!-- base.css -->
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/base.css">
+
+		<style type="text/css">
+			.flex-container{
+				align-content: space-between;
+			}
+
+			.flex-item{
+				height: 40px;
+			}
+		</style>
+	</head>
+
+	<body class="Site">
+		<header>
+			<div class="header-container">
+				<div class="logo"></div>
+				<div class="nav navbar-nav">
+					<ul>
+						<li class="active"><span class="arrow"></span><a href="#">首&nbsp;&nbsp;&nbsp;页</a></li>
+						<li><span class="arrow"></span><a href="#">客户信息</a></li>
+						<li><span class="arrow"></span><a href="#">业务管理</a></li>
+						<li><span class="arrow"></span><a href="#">还款管理</a></li>
+						<li><span class="arrow"></span><a href="#">统计分析</a></li>
+						<li><span class="arrow"></span><a href="#">系统设置</a></li>
+					</ul>
+					<div class="me">
+						<span>我的</span>
+						<div class="me-menu">
+							<span class="arrow"></span>
+							<ul>
+								<li>我的设置</li>
+								<li>修改密码</li>
+								<li>退出登录</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</header>
+
+
+		<section>
+			<div class="content">
+				<div class="navigation">
+					<div class="nav-title">
+						<i class="icon customer"></i>
+						<span>客户管理</span>
+					</div>
+					<ul class="main-navigation-menu">
+						<li class="menu-list">
+	                        <a href="javascript:void(0);">
+	                        	<i class="icon home"></i>
+	                            <span class="title"> 首页 </span>
+	                        </a>
+	                    </li>
+	                    <li class="menu-list active">
+	                        <a href="javascript:void(0);">
+	                            <i class="icon customer-base"></i>
+	                            <span class="title"> 客户基础信息 </span>
+	                        </a>
+	                        <ul class="sub-menu" style="display: block;">
+	                            <li>
+	                            	<span class="arrow-right"></span>
+	                                <a href="./edit.html">
+	                                    <span class="title"> 普通表格 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                            	<span class="arrow-right"></span>
+	                                <a href="./tree.html">
+	                                    <span class="title"> 树型菜单 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                            	<span class="arrow-right"></span>
+	                                <a href="./treegrid.html">
+	                                    <span class="title"> 树列表 </span>
+	                                </a>
+	                            </li>
+	                            <li class="active">
+	                            	<span class="arrow-right"></span>
+	                                <a href="./model.html">
+	                                    <span class="title"> 浮窗 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                            	<span class="arrow-right"></span>
+	                                <a href="javascript:void(0);">
+	                                    <span class="title"> 按钮 </span>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </li>
+						<li class="menu-list">
+						    <a href="javascript:void(0);">
+						    	<i class="icon customer-auth"></i>
+						        <span class="title"> 客户资料认证 </span>
+						    </a>
+						    <ul class="sub-menu" style="display: none;">
+						        <li class="open">
+						        	<span class="arrow-right"></span>
+						            <a href="javascript:;">Item 1 <i class="<icon-arrow></icon-arrow>"></i></a>
+						        </li>
+						        <li>
+						        	<span class="arrow-right"></span>
+						            <a href="#">Item 3</a>
+						        </li>
+						    </ul>
+						</li>    
+						<li class="menu-list">
+						    <a href="javascript:void(0);">
+						    	<i class="icon customer-contect"></i>
+						        <span class="title"> 客户联系人信息 </span>
+						    </a>
+						    <ul class="sub-menu" style="display: none;">
+						        <li class="open">
+						        	<span class="arrow-right"></span>
+						            <a href="javascript:;">Item 1 <i class="<icon-arrow></icon-arrow>"></i></a>
+						        </li>
+						        <li>
+						        	<span class="arrow-right"></span>
+						            <a href="#">Item 3</a>
+						        </li>
+						    </ul>
+						</li>
+						<li class="menu-list">
+						    <a href="javascript:void(0);">
+						    	<i class="icon customer-account"></i>
+						        <span class="title"> 客户账户信息 </span>
+						    </a>
+						    <ul class="sub-menu" style="display: none;">
+						        <li class="open">
+						        	<span class="arrow-right"></span>
+						            <a href="javascript:;">Item 1 <i class="<icon-arrow></icon-arrow>"></i></a>
+						        </li>
+						        <li>
+						        	<span class="arrow-right"></span>
+						            <a href="#">Item 3</a>
+						        </li>
+						    </ul>
+						</li>                
+					</ul>
+				</div>
+				<div class="frame">
+					<div class="frame-title">
+						<h3>浮窗案例</h3>
+					</div>
+					<div class="frame-panel">
+						<div class="leaderboard" style="margin-bottom: 20px;">
+							<h3>浮窗演示</h3>
+							<p>w3cschool offers web development tutorials. We believe in Open Source. Love standards. And prioritize simplicity and readability while serving content.</p>
+						</div>
+
+						<!-- 按钮组 -->
+						<form class="form-inline" role="form">
+							<div class="m-bot15 col-lg-12 form-group" style="padding: 0px;">
+								<button type="button" class="btn btn-info btn-sm"  onclick="showDialog()" data-toggle="modal" ><!-- data-target="#myModal" -->
+									<i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;弹框
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 模态框（Modal） -->
+			<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static"  data-keyboard="false" aria-hidden="true">
+			    <div class="modal-dialog column3">
+					<div class="modal-content">
+						<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<p>基本信息</p>
+					</div>
+					<div class="modal-body">
+						<form class="form-inline" role="form">
+							<div class="flex-container">
+								<div class="flex-item">
+									<div class="form-group">
+										<label class="control-label">提交类型：</label>
+										<input class="form-control" type="text" placeholder="请输入内容"/>
+									</div>
+								</div>
+								<div class="flex-item">
+									<label class="control-label">主责部门：</label>
+									<select class="form-control" style="width: 150px;height: 33px;" id="select_orderstatus">
+										<option value="-1">全部</option>
+										<option value="0">行政部</option>
+										<option value="1">IT部</option>
+									</select>
+								</div>
+								<div class="flex-item">
+									<label class="control-label">岗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位：</label>
+									<input class="form-control" type="text" placeholder="请输入内容"/>
+								</div>
+								<div class="flex-item">
+									<div class="form-group">
+										<label class="control-label">指示编号：	</label>
+										<input class="form-control" type="text" placeholder="请输入内容"/>
+									</div>
+								</div>
+								<div class="flex-item">
+									<label class="control-label">指示名称：	</label>
+									<input class="form-control" type="text" placeholder="请输入内容"/>
+								</div>
+								<div class="flex-item">
+									<label class="control-label">指标类型：</label>
+									<select class="form-control" style="width: 150px;height: 33px;" id="select_orderstatus">
+										<option value="-1">全部</option>
+										<option value="0">类型1</option>
+										<option value="1">类型2</option>
+									</select>
+								</div>
+							</div>
+							<div class="flex-container">
+								<div style="width: 100%;">
+									<label class="control-label" style="vertical-align: top;">指示含义：	</label>
+									<textarea class="form-control" rows="3" style="width: 90%"></textarea>
+								</div>
+							</div>
+							<div class="flex-container">
+								<div style="width: 100%;">
+									<label class="control-label" style="vertical-align: top;">计算公式：	</label>
+										<textarea class="form-control" rows="3" style="width: 90%"></textarea>
+								</div>
+							</div>
+							<div class="flex-container">
+								<div style="width: 100%;">
+									<label class="control-label">指标频率：	</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox1" value="option1">年
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox1" value="option1">季
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox1" value="option1">月
+									</label>
+
+									<label class="checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox1" value="option1">周
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox1" value="option1">天
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox1" value="option1">小时
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox1" value="option1">次
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" id="inlineCheckbox1" value="option1">个
+									</label>
+									<input type="text" class="form-control" name="">
+									<label>其他</label>
+								</div>
+							</div>
+							<div class="flex-container">
+								<div style="width: 100%;">
+									<label class="control-label" style="vertical-align: top;">数据来源：	</label>
+									<textarea class="form-control" rows="3" style="width: 90%"></textarea>
+								</div>
+							</div>
+							<div class="flex-container">
+								<div style="width: 100%;">
+									<label class="control-label" style="vertical-align: top;">备注：	</label>
+									<textarea class="form-control" rows="3" style="width: 90%"></textarea>
+								</div>
+							</div>
+						</form>
+					</div>
+			    	<div class="modal-footer">
+						<a href="#" class="btn btn-default" data-dismiss="modal">关闭</a>
+						<a href="#" class="btn btn-info" data-dismiss="modal">保存</a>
+			    	</div>
+				</div>
+			</div><!-- /modal end -->
+		</section>
+
+		<footer>
+			<p>深圳联合保理有限公司版权所有&nbsp;&nbsp;&nbsp;粤ICP备11089480号</p>
+		</footer>
+
+		<!-- 引入第三方类库 -->
+		<script type="text/javascript" src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/lib/bootstrap/bootstrap-3.3.6.min.js"></script>
+		<script type="text/javascript" src="../js/lib/bootbox.min.js"></script>
+		<!-- 引入自定义工具类 -->
+		<script type="text/javascript" src="../js/app/base.js"></script>
+		<!-- TODO : 引入当前页面脚本 -->
+		<script type="text/javascript">
+			$(function(){
+
+			});
+
+			function showDialog(){
+				$('#myModal').modal('show');
+			}
+		</script>
+	</body>
+</html>

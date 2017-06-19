@@ -1,0 +1,87 @@
+{
+    "code": 200, 
+    "message": "机构树查询成功！", 
+    "data": [
+        {
+            "id": "2", 
+            "name": "深圳联合保理有限公司", 
+            "parentId": "", 
+            "type": "1", 
+            "telephone": "", 
+            "mobile": "", 
+            "contacts": "", 
+            "address": "", 
+            "orgIdPath": "/2", 
+            "orgNamePath": "/深圳联合保理有限公司", 
+            "title" : "深圳联合保理有限公司", 
+            "key": "2",
+            "expanded": true,   
+            "children": [
+                {
+                    "id": "870473791346708480", 
+                    "title" : "运营部", 
+                    "name": "运营部", 
+                    "parentId": "2", 
+                    "type": "3", 
+                    "telephone": "运营部", 
+                    "mobile": "", 
+                    "contacts": "运营部", 
+                    "address": "", 
+                    "orgIdPath": "/2/870473791346708480", 
+                    "orgNamePath": "/深圳联合保理有限公司/运营部", 
+                    "children": [ ], 
+                    "text": "运营部",
+                    "selected": true,
+                    "unselectableStatus": true  
+                }, 
+                {
+                    "id": "870519764215271424", 
+                    "title" : "研发部", 
+                    "name": "研发部", 
+                    "parentId": "2", 
+                    "type": "3", 
+                    "telephone": "研发部", 
+                    "mobile": "", 
+                    "contacts": "研发部", 
+                    "address": "", 
+                    "orgIdPath": "/2/870519764215271424", 
+                    "orgNamePath": "/深圳联合保理有限公司/研发部", 
+                    "children": [
+                        {
+                            "id": "870519833547116544", 
+                            "title" : "研发1队",
+                            "name": "研发1队", 
+                            "parentId": "870519764215271424", 
+                            "type": "3", 
+                            "telephone": "研发1队", 
+                            "mobile": "", 
+                            "contacts": "研发1队", 
+                            "address": "", 
+                            "orgIdPath": "/2/870519764215271424/870519833547116544", 
+                            "orgNamePath": "/深圳联合保理有限公司/研发部/研发1队", 
+                            "children": [ ], 
+                            "text": "研发1队"
+                        }, 
+                        {
+                            "id": "870519865415438336", 
+                            "title" : "研发2队",
+                            "name": "研发2队", 
+                            "parentId": "870519764215271424", 
+                            "type": "3", 
+                            "telephone": "研发2队", 
+                            "mobile": "", 
+                            "contacts": "研发2队", 
+                            "address": "", 
+                            "orgIdPath": "/2/870519764215271424/870519865415438336", 
+                            "orgNamePath": "/深圳联合保理有限公司/研发部/研发2队", 
+                            "children": [ ], 
+                            "text": "研发2队"
+                        }
+                    ], 
+                    "text": "研发部"
+                }
+            ], 
+            "text": "联合保理"
+        }
+    ]
+}

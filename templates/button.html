@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>联合保理后台管理系统</title>
+
+		<!--common-->
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-responsive-2.3.2.css">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-reset.css">
+		<link rel="stylesheet" type="text/css" href="../fonts/css/font-awesome.min.css">
+		
+
+		<!-- base.css -->
+		<link rel="stylesheet" type="text/css" href="../css/base.css">
+	</head>
+
+	<body class="Site">
+		<!-- 固定的的头部区域 -->
+		<div class="navbar navbar-fixed-top app-header">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="row">
+						<div class="span2">
+							<div class="navbar-header">
+						        <a class="navbar-brand" href="#">联合保理</a>
+						    </div>
+						</div>
+						<ul class="nav navbar-nav">
+				            <li class="active"><a href="#">首页</a></li>
+				            <li><a href="#">分户账管理</a></li>
+				            <li><a href="#">托收</a></li>
+				            <li><a href="#">坏账担保</a></li>
+				            <li><a href="#">融资</a></li>
+				        </ul>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<div class="container app-frame Site-content">
+			<div class="row">
+				<!-- Nav -->
+				<div class="span3 app-nav">
+					<ul class="main-navigation-menu">
+						<li class="menu-list">
+	                        <a href="../index.html">
+	                            <span class="title"> 首页 </span></span>
+	                        </a>
+	                    </li>
+	                    <li class="menu-list active">
+	                        <a href="javascript:void(0);">
+	                            <span class="title"> 控件 </span><i class="icon-arrow"></i></span>
+	                        </a>
+	                        <ul class="sub-menu" style="display: block;">
+	                            <li>
+	                                <a href="./grid.html" class="close-sidebar-left">
+	                                    <span class="title"> 普通表格 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="./tree.html">
+	                                    <span class="title"> 树型菜单 </span>
+	                                    <span class="badge badge-new">11</span>
+	                                </a>
+	                            </li>
+	                           	<li>
+	                                <a href="./tree.html" class="set-boxed-layout">
+	                                    <span class="title"> 树列表 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="./model.html" class="set-footer-fixed">
+	                                    <span class="title"> 模态框 </span>
+	                                </a>
+	                            </li>
+	                            <li class="open">
+	                                <a href="./button.html">
+	                                    <span class="title"> 按钮 </span>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </li>
+						<li class="menu-list">
+						    <a href="javascriptvoid(0);">
+						        <span class="title"> 2 Level Menu </span>
+						    </a>
+						    <ul class="sub-menu" style="display: none;">
+						        <li>
+						            <a href="javascript:;">Item 1 <i class="<icon-arrow></icon-arrow>"></i></a>
+						        </li>
+						        <li>
+						            <a href="#">Item 3</a>
+						        </li>
+						    </ul>
+						</li>	                    
+					</ul>
+				</div>
+				
+				<!-- Content -->
+				<div class="span9 app-content container-fluid">
+					<div class="leaderboard">
+						<h3>浮窗演示</h3>
+						<p>w3cschool offers web development tutorials. We believe in Open Source. Love standards. And prioritize simplicity and readability while serving content.</p>
+					</div>
+
+					<!-- 按钮组 -->
+					<form class="form-inline" role="form">
+						<div class="row" style="background-color: #e6e6e6;border: 1px solid #ccc !important;color: #000;padding: 10px;margin-bottom: 10px;">
+							<div class="m-bot15 col-lg-12 form-group" style="padding: 0px;">
+								<button type="button" class="btn btn-success btn-sm js-btn-addUser">
+		                        	<i class="fa fa-plus"></i>&nbsp;&nbsp;添加用户
+		                        </button>
+								<label class="form-label">&nbsp;&nbsp;时间：</label>
+								<input type="text" class="form-control input-large" style="width: 200px;" name="daterange-order" value="请选择开始日期">
+								<label class="form-label">&nbsp;&nbsp;至</label>
+								<input type="text" class="form-control input-large" style="width: 200px;" name="daterange-order" value="请选择结束日期">
+								<button type="button" class="btn btn-primary btn-sm" id="searchBut" onclick="userModule.loadUserList(true,1);">
+		                        	<i class="fa fa-search"></i>&nbsp;&nbsp;查询
+		                        </button>
+		                        <button type="button" class="btn btn-primary btn-sm"  onclick="javascript:void(0);" data-toggle="modal" data-target="#myModal">
+		                        	<i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;弹框
+		                        </button>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<!-- 模态框（Modal） -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				    <div class="modal-dialog">
+                		<div class="modal-content">
+                   			<div class="modal-header">
+                        		<button type="button" class="close" data-dismiss="modal">×</button>
+                        		<p>基本信息</p>
+                    		</div>
+                    		<div class="modal-body">
+                    			
+                    		</div>
+		                    <div class="modal-footer">
+		                        <a href="#" class="btn btn-default" data-dismiss="modal">关闭</a>
+		                        <a href="#" class="btn btn-info" data-dismiss="modal">保存</a>
+		                    </div>
+            			</div>
+				    </div><!-- /.modal -->
+				</div>
+	
+			</div>
+		</div>
+
+		<footer>
+	        <p>© Company 2012</p>
+	    </footer>
+
+		<!-- 引入第三方类库 -->
+		<script type="text/javascript" src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/lib/bootstrap/bootstrap-3.3.6.min.js"></script>
+		<script type="text/javascript" src="../js/lib/bootbox.min.js"></script>
+
+		<!-- <script type="text/javascript" src="../js/lib/jquery.msgbox.js"></script> -->
+		<!-- 引入自定义工具类 -->
+		<script type="text/javascript" src="../js/common/toast.js"></script>
+		<script type="text/javascript" src="../js/app/base.js"></script>
+		<!-- TODO : 引入当前页面脚本 -->
+		<script type="text/javascript">
+			$(function(){
+				// bootbox.alert({
+				//     message: "This alert can be dismissed by clicking on the background!",
+				//     backdrop: true
+				// });
+
+
+				// $("#basicDialogBtn").click(function(){
+					
+				// });
+			});
+		</script>
+	</body>
+</html>

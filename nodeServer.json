@@ -1,0 +1,15 @@
+var http = require('http');
+
+http.createServer(function (request, response) {
+
+	// 发送 HTTP 头部 
+	// HTTP 状态值: 200 : OK
+	// 内容类型: text/plain
+	response.writeHead(200, {'Content-Type': 'text/plain'});s
+
+	// 发送响应数据 "Hello World"
+	response.end('{"code":200,"message":"用户列表查询成功！","data":{"pageNum":1,"pageSize":10,"startRow":0,"endRow":10,"total":"14","pages":2,"count":true,"list":[{"id":"2","seqNo":"","name":"vanlin liu","account":"vanlin@LHBL","type":"1","orgId":"2","orgName":"深圳联合保理有限公司","password":"","updatedOn":"2017-06-05 16:56:59","status":"1"},{"id":"870895726002049024","seqNo":"","name":"测试","account":"test@LHBL","type":"1","orgId":"870473791346708480","orgName":"运营部","password":"","updatedOn":"2017-06-05 16:57:05","status":"2"},{"id":"870906827754311680","seqNo":"","name":"test7 test7","account":"test7@LHBL","type":"2","orgId":"870473791346708480","orgName":"运营部","password":"","updatedOn":"2017-06-05 16:58:54","status":"1"},{"id":"870917797788651520","seqNo":"","name":"test2 test2","account":"test2@LHBL","type":"2","orgId":"870519764215271424","orgName":"研发部","password":"","updatedOn":"2017-06-05 16:57:44","status":"1"},{"id":"870920046300499968","seqNo":"","name":"test3 test3","account":"test3@LHBL","type":"2","orgId":"870519833547116544","orgName":"研发1队","password":"","updatedOn":"2017-06-05 16:59:34","status":"1"},{"id":"870920302048186368","seqNo":"","name":"test4 test4","account":"test4@LHBL","type":"2","orgId":"870519865415438336","orgName":"研发2队","password":"","updatedOn":"2017-06-05 16:59:52","status":"1"},{"id":"870920556164288512","seqNo":"","name":"测试","account":"test5@LHBL","type":"1","orgId":"870519865415438336","orgName":"研发2队","password":"","updatedOn":"2017-06-05 14:45:21","status":"2"},{"id":"870920744777945088","seqNo":"","name":"测试","account":"test6@LHBL","type":"1","orgId":"870519865415438336","orgName":"研发2队","password":"","updatedOn":"2017-06-05 14:45:17","status":"2"},{"id":"870921428759875584","seqNo":"","name":"测试","account":"test8@LHBL","type":"1","orgId":"870519833547116544","orgName":"研发1队","password":"","updatedOn":"2017-06-05 14:45:15","status":"2"},{"id":"870921701834231808","seqNo":"","name":"测试","account":"test9@LHBL","type":"1","orgId":"870519764215271424","orgName":"研发部","password":"","updatedOn":"2017-06-05 20:27:49","status":"1"}]}}');
+}).listen(8888);
+
+// 终端打印如下信息
+console.log('Server running at http://127.0.0.1:8888/');

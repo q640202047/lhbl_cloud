@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>联合保理后台管理系统</title>
+
+		<!--common-->
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../js/lib/jquery-toast-plugin/jquery.toast.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-responsive.css"/>
+		<link rel="stylesheet" type="text/css" href="../js/lib/fancytree/ui.fancytree.css" >
+
+		<!-- base.css -->
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/base.css">
+	</head>
+
+	<body>
+		<header>
+			<div class="header-container">
+				<div class="logo"></div>
+				<div class="nav navbar-nav">
+					<ul>
+						<li class="active"><span class="arrow"></span><a href="#">首&nbsp;&nbsp;&nbsp;页</a></li>
+						<li><span class="arrow"></span><a href="#">客户信息</a></li>
+						<li><span class="arrow"></span><a href="#">业务管理</a></li>
+						<li><span class="arrow"></span><a href="#">还款管理</a></li>
+						<li><span class="arrow"></span><a href="#">统计分析</a></li>
+						<li><span class="arrow"></span><a href="#">系统设置</a></li>
+					</ul>
+					<div class="me">
+						<span>我的</span>
+						<div class="me-menu">
+							<span class="arrow"></span>
+							<ul>
+								<li>我的设置</li>
+								<li>修改密码</li>
+								<li>退出登录</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</header>
+
+
+		<section>
+			<div class="content">
+				<div class="navigation">
+					<div class="nav-title">
+						<i class="icon customer"></i>
+						<span>客户管理</span>
+					</div>
+					<ul class="main-navigation-menu">
+						<li class="menu-list">
+	                        <a href="javascript:void(0);">
+	                        	<i class="icon home"></i>
+	                            <span class="title"> 首页 </span>
+	                        </a>
+	                    </li>
+	                    <li class="menu-list active">
+	                        <a href="javascript:void(0);">
+	                            <i class="icon customer-base"></i>
+	                            <span class="title"> 客户基础信息 </span>
+	                        </a>
+	                        <ul class="sub-menu" style="display: block;">
+	                            <li>
+	                            	<span class="arrow-right"></span>
+	                                <a href="./edit.html">
+	                                    <span class="title"> 普通表格 </span>
+	                                </a>
+	                            </li>
+	                            <li class="active">
+	                            	<span class="arrow-right"></span>
+	                                <a href="javascript:void(0);">
+	                                    <span class="title"> 树型菜单 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                            	<span class="arrow-right"></span>
+	                                <a href="./treegrid.html">
+	                                    <span class="title"> 树列表 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                            	<span class="arrow-right"></span>
+	                                <a href="./model.html">
+	                                    <span class="title"> 浮窗 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                            	<span class="arrow-right"></span>
+	                                <a href="javascript:void(0);">
+	                                    <span class="title"> 按钮 </span>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </li>
+						<li class="menu-list">
+						    <a href="javascript:void(0);">
+						    	<i class="icon customer-auth"></i>
+						        <span class="title"> 客户资料认证 </span>
+						    </a>
+						    <ul class="sub-menu" style="display: none;">
+						        <li>
+						        	<span class="arrow-right"></span>
+						            <a href="javascript:;">Item 1 <i class="<icon-arrow></icon-arrow>"></i></a>
+						        </li>
+						        <li>
+						        	<span class="arrow-right"></span>
+						            <a href="#">Item 3</a>
+						        </li>
+						    </ul>
+						</li>    
+						<li class="menu-list">
+						    <a href="javascript:void(0);">
+						    	<i class="icon customer-contect"></i>
+						        <span class="title"> 客户联系人信息 </span>
+						    </a>
+						    <ul class="sub-menu" style="display: none;">
+						        <li>
+						        	<span class="arrow-right"></span>
+						            <a href="javascript:;">Item 1 <i class="<icon-arrow></icon-arrow>"></i></a>
+						        </li>
+						        <li>
+						        	<span class="arrow-right"></span>
+						            <a href="#">Item 3</a>
+						        </li>
+						    </ul>
+						</li>
+						<li class="menu-list">
+						    <a href="javascript:void(0);">
+						    	<i class="icon customer-account"></i>
+						        <span class="title"> 客户账户信息 </span>
+						    </a>
+						    <ul class="sub-menu" style="display: none;">
+						        <li>
+						        	<span class="arrow-right"></span>
+						            <a href="javascript:void(0);">Item 1 <i class="<icon-arrow></icon-arrow>"></i></a>
+						        </li>
+						        <li>
+						        	<span class="arrow-right"></span>
+						            <a href="javascript:void(0);">Item 3</a>
+						        </li>
+						    </ul>
+						</li>                
+					</ul>
+				</div>
+				<div class="frame">
+					<div class="frame-title">
+						<h3>树型菜单案例</h3>
+					</div>
+					<div class="frame-panel">
+						<form class="form-inline">
+							<div class="row">
+								<div class="col-lg-12 form-group">
+									<button type="button" id="expandAllBtn"
+									    class="btn btn-info btn-sm js-btn-addUser">
+			                    		<i class="glyphicon glyphicon-search"></i>&nbsp;&nbsp;展开全部
+			                    	</button>
+			                    	<button type="button" id="closeAllBtn"
+			                    		class="btn btn-info btn-sm js-btn-addUser">
+			                    		<i class="glyphicon glyphicon-search"></i>&nbsp;&nbsp;收起全部
+			                    	</button>
+									<button type="button" id="reloadBtn"
+									    class="btn btn-info btn-sm js-btn-addUser">
+			                    		<i class="glyphicon glyphicon-search"></i>&nbsp;&nbsp;重载数据
+			                    	</button>
+			                    	<button type="button" id="selectAllBtn"
+									    class="btn btn-info btn-sm js-btn-addUser">
+			                    		<i class="glyphicon glyphicon-search"></i>&nbsp;&nbsp;选中全部
+			                    	</button>
+			                    	<button type="button" id="unselectAllBtn"
+									    class="btn btn-info btn-sm js-btn-addUser">
+			                    		<i class="glyphicon glyphicon-search"></i>&nbsp;&nbsp;取消选中全部
+			                    	</button>
+									<button type="button" id="getActiveBtn"
+										class="btn btn-info btn-sm js-btn-addUser">
+			                    		<i class="glyphicon glyphicon-search"></i>&nbsp;&nbsp;获取点中的项
+			                    	</button>
+									<button type="button" id="disableBtn"
+										class="btn btn-info btn-sm js-btn-addUser">
+			                    		<i class="glyphicon glyphicon-search"></i>&nbsp;&nbsp;禁用/启用
+			                    	</button>
+
+									<button type="button" id="toggleBtn"
+										class="btn btn-info btn-sm js-btn-addUser">
+			                    		<i class="glyphicon glyphicon-search"></i>&nbsp;&nbsp;toggle
+			                    	</button>			                    	
+		                    	</div>
+							</div>
+						</form>
+
+
+						<div id="treetable" class="table table-condensed table-hover table-striped"></div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+		<footer>
+			<p>深圳联合保理有限公司版权所有&nbsp;&nbsp;&nbsp;粤ICP备11089480号</p>
+		</footer>
+
+		<!-- 引入第三方类库 -->
+		<script type="text/javascript" src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery/jquery-ui-1.12.1.min.js"></script>
+		<script type="text/javascript" src="../js/lib/bootstrap/bootstrap-3.3.6.min.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-toast-plugin/jquery.toast.min.js"></script>
+		<script type="text/javascript" src="../js/lib/fancytree/jquery.fancytree.js"></script>
+		<script type="text/javascript" src="../js/lib/fancytree/jquery.fancytree.dnd.js"></script>
+		<script type="text/javascript" src="../js/lib/fancytree/jquery.fancytree.edit.js"></script>
+		<script type="text/javascript" src="../js/lib/fancytree/jquery.fancytree.glyph.js"></script>
+		<script type="text/javascript" src="../js/lib/fancytree/jquery.fancytree.table.js"></script>
+		<script type="text/javascript" src="../js/lib/fancytree/jquery.fancytree.wide.js"></script>
+
+		<!-- 引入自定义工具类 -->
+		<script type="text/javascript" src="../js/common/toast.js"></script>
+		<script type="text/javascript" src="../js/common/http.js"></script>
+		<script type="text/javascript" src="../js/common/tree.js"></script>
+		<script type="text/javascript" src="../js/app/base.js"></script>
+
+		<!-- 引入当前页面脚本 -->
+		<script type="text/javascript">
+
+		$(function(){
+			//初始化tree
+			$.send({
+				url : '../tree.json'
+			}).then(function(res){
+				backupObj = res.data;
+				$("#treetable").treeInit({
+					source:res.data,
+					minExpandLevel: 1,
+					select : function(event, data){
+						console.log('当前选中的节点:' + data.node.key);
+					}
+				});
+			});	
+
+			//展开全部
+			$('#expandAllBtn').click(function(){
+				$('#treetable').treeExpendAll();
+			});
+
+			//收缩全部
+			$('#closeAllBtn').click(function(){
+				$('#treetable').treeCloseAll();
+			});
+
+
+			//重载
+			$('#reloadBtn').click(function(){
+				$("#treetable").treeGetInstance().reload([
+		          {title: "node1"},
+		          {title: "node2"}
+		        ]).done(function(){
+		        	alert('reloaded');
+		        });
+			});
+
+			//禁用
+			$('#disableBtn').click(function(){
+				$('#treetable').treeDisable();
+			});
+
+			//选中全部
+			$('#selectAllBtn').click(function(){
+				$('#treetable').treeSelectAll();
+			});
+
+			//取消选中全部
+			$('#unselectAllBtn').click(function(){
+				$('#treetable').treeUnSelectAll();
+			});
+
+			//获取选中的值
+			$('#getActiveBtn').click(function(){
+				var node = $('#treetable').fancytree('getActiveNode');
+				alert(node.title);
+			});
+
+			//展开或收缩
+			$('#toggleBtn').click(function(){
+				$('#treetable').treeGetInstance().visit(function(node){
+					node.toggleExpanded();
+				});
+			});
+		});
+		</script>
+	</body>
+</html>

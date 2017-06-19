@@ -1,0 +1,513 @@
+
+/*-------------------------------
+    common通用样式
+-------------------------------*/
+	.form-inline{
+		margin-bottom: 20px;
+	}
+
+	table.table{
+		text-align: center;
+	}
+
+	div.frame div.frame-panel table thead{
+		background-color: #F0F0F0;
+	}
+
+	div.frame div.frame-panel table.table-bordered>thead>tr>td, 
+	div.frame div.frame-panel table.table-bordered>thead>tr>th{
+		border-bottom-width: 0px;
+	}
+
+	div.frame div.frame-panel table.table-bordered a{
+		color: #337ab7;
+	}
+	
+	i.icon{
+		background-repeat: no-repeat;
+		background-size: 20px 20px;
+	}
+
+	i.customer{
+		background-image: url('../images/svg/customer.svg');
+	}
+
+	i.customer-account{
+		background-image: url('../images/svg/customer-account-default.svg');
+	}
+	li.active a i.customer-account{
+		background-image: url('../images/svg/customer-account-active.svg');	
+	}
+
+	i.customer-auth{
+		background-image: url('../images/svg/customer-auth-default.svg');
+	}
+	li.active a i.customer-auth{
+		background-image: url('../images/svg/customer-auth-active.svg');
+	}
+
+	i.customer-base{
+		background-image: url('../images/svg/customer-base-default.svg');
+	}
+	li.active a i.customer-base{
+		background-image: url('../images/svg/customer-base-active.svg');
+	}
+
+	i.customer-contect{
+		background-image: url('../images/svg/customer-contect-default.svg');
+	}
+	li.active a i.customer-contect{
+		background-image: url('../images/svg/customer-contect-active.svg');
+	}
+
+	i.home{
+		background-image: url('../images/svg/home-default.svg');
+	}
+	li.active a i.home{
+		background-image: url('../images/svg/home-active.svg');
+	}
+
+/*-------------------------------
+    Header顶部区域
+-------------------------------*/
+	body header{
+		flex: 0 0 auto;
+		width: 100%;
+		height: 90px;
+		background-color: #FFFFFF;
+		box-shadow: 1px 1px 10px 3px #ebebeb;
+		margin-bottom: 3px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	body header div.header-container{
+		width: 1200px;
+		height: 100%;
+	    display: flex;
+	    flex-direction: row;
+	    justify-content: space-between;
+	}
+
+	body header div.header-container div.logo{
+	    height: 100%;
+	    width: 337px;
+	    background-image: url('../images/logo.jpg');
+	    background-repeat: no-repeat;
+	    background-position: center;
+	    flex-flow: 0 0 337px;
+	}
+
+	body header div.header-container div.nav{
+		height: 100%;
+		min-width: 740px;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		line-height: 90px;
+		color: #666666;
+	}
+
+	body header div.header-container div.nav ul{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		list-style: none;
+		height: 100%;
+	}
+
+	body header div.header-container div.nav ul li{
+		cursor: pointer;
+		vertical-align: middle;
+		box-sizing:border-box;
+		border-top:2px solid #fff;
+	}
+
+	body header div.header-container div.nav ul li:hover{
+		background-color: #F2F2F2;
+		color: #353A50;
+		text-align: center;
+	}
+
+	body header div.header-container div.nav ul li.active{
+		border-top:2px solid #d2464b;
+		color: #000;
+		background-color: #F2F2F2;
+		position: relative;
+	}
+	
+	body header div.header-container div.nav ul li span.arrow{
+		display: none;
+	}
+
+	body header div.header-container div.nav ul li.active span.arrow{
+		display: block;
+		font-size: 0;
+        border-width: 4px;
+        border-style: solid;
+        border-color: #d2464b;
+
+        border-bottom-width: 0;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-top-style: solid; 
+
+        position: absolute;
+        top:0;
+        left: 45%;
+	}
+
+	/*默认样式*/
+	body header div.header-container div.nav ul a{
+		display: block;
+		padding-left: 20px;
+	    padding-right: 20px;
+	    font-size: 18px;
+	    color: #666;
+	    text-decoration:none;
+	}
+	/*菜单节点超过5个时*/
+	body header div.header-container div.nav ul a.mini{
+		padding-left: 12px;
+		padding-right: 12px;
+		font-size: 16px;
+	}
+
+
+	body header div.header-container div.nav ul li.active a{
+		color: #333;
+	}			
+
+	body header div.header-container div.nav div.me{
+		background-image: url('../images/svg/me-default.svg');
+		background-repeat: no-repeat;
+		background-position: 10px;
+		padding-left: 44px;
+		padding-right: 20px;
+		background-size: 30px;
+		cursor: pointer;
+		position: relative;
+		font-size: 18px;
+		color: #9c9c9c;
+		border-top: 2px solid #fff;
+	}
+
+	body header div.header-container div.nav div.me.active{
+		background-image: url('../images/svg/me-active.svg');
+		background-color: #F2F2F2;
+		color: #353A50;
+	}
+
+	body header div.header-container div.nav div.me div.me-menu{
+		position: absolute;
+		width: 100px; 
+		font-size: 14px;
+		color: #000;
+		background-color: #fff;
+		margin-left: -44px;
+		border-top: 1px solid #e6e6e6;
+		border-left: 1px solid #e6e6e6;
+		border-right: 1px solid #e6e6e6;
+		z-index: 99;
+		display: none;
+	}
+
+	body header div.header-container div.nav div.me div.me-menu.active{
+		display: block;
+	}
+
+	body header div.header-container div.nav div.me div.me-menu ul li{
+		height: 38px;
+		line-height: 38px;
+		border-bottom: 1px solid #e6e6e6;
+		width: 100%;
+		text-align: center;
+		border-top:none;
+	}
+
+	body header div.header-container div.nav div.me span.arrow{
+		display: block;
+	    font-size: 0;
+	    border-width: 10px;
+	    border-style: solid;
+	    border-color: #bebdbd;
+	    border-top-width: 0;
+	    border-left-color: transparent;
+	    border-right-color: transparent;
+	    border-bottom-style: solid;
+	    position: absolute;
+	    top: -10px;
+	    left: 38%;
+	}
+
+/*-------------------------------
+    Section内容区域
+-------------------------------*/		
+	body section{
+		flex: 1 0 auto;
+		background-color: #F4F4F4;
+		display: flex;
+		justify-content: center;
+	}
+
+	body section div.content{
+		width: 1200px;
+		align-items: stretch;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	body section div.content div.frame{
+		width: 600px;
+		flex:1 0 auto;
+		background-color: #fff;
+	}
+
+	body section div.content div.frame div.frame-title{
+		height: 56px;
+		line-height: 56px;
+		border-left: 4px solid #D7D7D7;
+		padding-left: 16px;
+		border-bottom: 1px solid #F0F0F0;
+	}
+
+	body section div.content div.frame div.frame-title h3{
+		height: inherit;
+		line-height: inherit;
+		font-size: 18px;
+		color:#353a50;
+		font-weight: normal;
+	}
+
+	body section div.content div.frame div.frame-panel{
+		padding: 20px;
+	}
+
+	
+	/**导航**/
+	body section div.content div.navigation{
+		flex:0 0 auto;
+		width: 200px;
+		background-color: #fff;
+		align-items: stretch;
+		margin-right: 20px;
+	}
+
+	body section div.content div.navigation div.nav-title{
+		height: 40px;
+		border-bottom: 1px solid #F0F0F0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	body section div.content div.navigation div.nav-title span{
+		height: 40px;
+		line-height: 40px;
+		font-size: 16px;
+		color: #333;
+	}
+	
+	body section div.content div.navigation div.nav-title i{
+		width: 20px;
+		height: 20px;
+		margin-right: 4px;
+	}
+
+
+	/*******左侧导航栏**********/
+	ul.main-navigation-menu,ul.sub-menu{
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	ul.main-navigation-menu > li > a{
+		display: block;
+		padding: 10px 15px;
+		position: relative;
+		text-decoration: none;
+		color: #848484;
+		font-size: 16px;
+		display: flex;
+		align-items: center;
+	}
+
+	ul.main-navigation-menu > li > a i{
+		width: 20px;
+		height: 20px;
+		margin-right: 8px;
+	}
+
+	ul.main-navigation-menu > li > a span{
+		line-height: 32px;
+	}
+
+	ul.main-navigation-menu>li.active > a{
+		color: #d2464b;
+	}
+
+	ul.main-navigation-menu li ul.sub-menu li{
+		display: block;
+	}
+
+	ul.main-navigation-menu ul.sub-menu li a{
+		display: block;
+		padding: 10px 15px;
+		padding-left: 40px;
+		color: #333;
+		text-decoration: none;
+	}
+
+	ul.main-navigation-menu ul.sub-menu li:hover{
+		background-color: #F2F2F2;
+		color: #353A50;
+		cursor: pointer;
+	}
+
+	ul.main-navigation-menu  li.active ul.sub-menu li.active{
+		background-color: #d2464b;
+		position: relative;
+	}
+	ul.main-navigation-menu  li.active ul.sub-menu li.active a{
+		color: #fff;
+	}
+
+	ul.main-navigation-menu  li.active ul.sub-menu li.active span.arrow-right{
+		display: block;
+	    font-size: 0;
+	    border-width: 20px;
+	    border-style: solid;
+	    border-color: #d2464b;
+	    border-right-width: 0;
+	    border-bottom-color: transparent;
+	    border-top-color: transparent;
+	    border-left-style: solid;
+	    position: absolute;
+	    right: 0;
+	    margin-right: -20px;
+	}
+
+/*-------------------------------
+    Footer底部区域
+-------------------------------*/
+	body footer{
+		flex: 0 0 auto;
+		height: 50px;
+		line-height: 50px;
+		background-color: #353A50;
+		color: #B6B7B4;
+		text-align: center;
+	}
+
+/*-------------------------------
+    datatable表格
+-------------------------------*/
+	div.edit{
+		display: inline-block;
+		width: 36px;
+		height: 36px;
+		border:1px solid #ccc;
+		text-align: center;
+	}
+
+/*-------------------------------
+    model弹窗
+-------------------------------*/
+	.flex-item{
+		width: 33%;
+	}
+
+	.flex-container{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	div.modal-dialog div.modal-content div.modal-body form.form-inline div.flex-container label.checkbox-inline input[type=checkbox]{
+		margin-top: 0;
+	}
+
+
+	div.modal-dialog div.modal-content div.modal-body form.form-inline div.flex-container{
+		margin-bottom: 10px;
+	}
+
+	/*3列*/
+	div.modal-dialog.column3{
+		width: 840px;
+	}
+
+	/*所有浮窗中所有的label标签*/
+	div.modal-dialog.column3 label{
+		font-size: 12px;
+	    font-weight: normal;
+	}
+
+	/*所有的label标题元素*/
+	div.modal-dialog.column3 label.control-label{
+		min-width: 60px;
+		text-align: left;
+	}
+
+	/*浮窗头*/
+	div.modal-header{
+		height: 54px;
+		line-height: 54px;
+		padding-top: 10px;
+	    padding-bottom: 10px;
+	    background-color: #f7f7f7;
+	    border-bottom: 1px solid #eaeaea;
+	    border-top-left-radius: 6px;
+	    border-top-right-radius: 6px;
+	}
+
+	div.modal-header > p{
+		margin:8px;
+		font-size: 18px;
+		height: 18px;
+		line-height: 18px;
+	    color: #323232;
+	    font-weight: normal;
+	    border-left: 5px solid #e21f25;
+    	padding-left: 7px;
+	}
+
+	div.modal-header > button.close{
+		margin-top: 8px;
+	    color: #c0c0c0;
+	    opacity: .5;
+	}
+
+	.modal-header > button.close:hover {
+	    opacity: 1;
+	}
+
+	/*浮窗主体*/
+	.modal-content {
+	    box-shadow: none;
+	    border-radius: 6px;
+	}
+
+	/*浮窗脚*/
+	div.modal-footer{
+		text-align: center;
+	}
+
+	div.modal-footer .btn{
+		border-radius: 0;
+	}
+
+	/*浮窗内容*/
+	div.modal-footer li.list-group-item{
+		margin: 0;
+		padding: 0;
+		border:none;
+	}
+
+	div.modal-footer > .form-listitem{
+		display: inline-block;
+	}

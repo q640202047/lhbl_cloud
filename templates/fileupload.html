@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>联合保理后台管理系统</title>
+
+		<!--common-->
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-responsive-2.3.2.css">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-reset.css">
+		<link rel="stylesheet" type="text/css" href="../fonts/css/font-awesome.min.css">
+
+		<link rel="stylesheet" href="../js/lib/jquery-upload-plugin/css/jquery.fileupload.css">
+		
+		<!-- base.css -->
+		<link rel="stylesheet" type="text/css" href="../css/base.css">
+
+		<!-- -->
+		<style type="text/css">
+			.file-list-container{
+				display: table;
+				width: 100%;
+				padding-left: 10px;
+				border-bottom: 2px dashed #ccc;
+			}
+
+			.file-list-container:last-child{
+				border-bottom: none;		
+			}
+
+			.file-list-column{
+				/*测试样式*/
+				height: 50px;
+				line-height: 50px;
+				/*border-top: 1px solid #ccc;	
+				border-left: 1px solid #ccc;	*/
+				display:table-cell;
+				
+			}
+			.file-list-column:first-child{
+				text-align: center;
+			}
+
+			#files{
+				border: 2px dashed #ccc;
+				min-height: 110px;
+				max-height: 210px;
+				overflow-y: auto;
+			}
+
+		</style>
+	</head>
+
+	<body class="Site">
+		<!-- 固定的的头部区域 -->
+		<div class="navbar navbar-fixed-top app-header">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="row">
+						<div class="span2">
+							<div class="navbar-header">
+						        <a class="navbar-brand" href="#">联合保理</a>
+						    </div>
+						</div>
+						<ul class="nav navbar-nav">
+				            <li class="active"><a href="#">首页</a></li>
+				            <li><a href="#">分户账管理</a></li>
+				            <li><a href="#">托收</a></li>
+				            <li><a href="#">坏账担保</a></li>
+				            <li><a href="#">融资</a></li>
+				        </ul>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<div class="container app-frame Site-content">
+			<div class="row">
+				<!-- Nav -->
+				<div class="span3 app-nav">
+					<ul class="main-navigation-menu">
+						<li class="menu-list">
+	                        <a href="../index.html">
+	                            <span class="title"> 首页 </span></span>
+	                        </a>
+	                    </li>
+	                    <li class="menu-list active">
+	                        <a href="javascript:void(0);">
+	                            <span class="title"> 控件 </span><i class="icon-arrow"></i></span>
+	                        </a>
+	                        <ul class="sub-menu" style="display: block;">
+	                            <li>
+	                                <a href="./templates/grid.html" class="close-sidebar-left">
+	                                    <span class="title"> 普通表格 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="./templates/tree.html">
+	                                    <span class="title"> 树型菜单 </span>
+	                                    <span class="badge badge-new">11</span>
+	                                </a>
+	                            </li>
+	                           	<li>
+	                                <a href="./templates/tree.html" class="set-boxed-layout">
+	                                    <span class="title"> 树列表 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="./templates/model.html" class="set-footer-fixed">
+	                                    <span class="title"> 模态框 </span>
+	                                </a>
+	                            </li>
+	                            <li class="open">
+	                                <a href="../clip-one-rtl/fileupload.html">
+	                                    <span class="title"> 文件上传 </span>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </li>
+						<li class="menu-list">
+						    <a href="javascriptvoid(0);">
+						        <span class="title"> 2 Level Menu </span>
+						    </a>
+						    <ul class="sub-menu" style="display: none;">
+						        <li>
+						            <a href="javascript:;">Item 1 <i class="<icon-arrow></icon-arrow>"></i></a>
+						        </li>
+						        <li>
+						            <a href="#">Item 3</a>
+						        </li>
+						    </ul>
+						</li>	                    
+					</ul>
+				</div>
+
+				<!-- Content -->
+				<div class="span9 app-content container-fluid">
+					<div class="leaderboard" id="leaderboard">
+						<h3>上传文件组件</h3>
+						<p>w3cschool offers web development tutorials. We believe in Open Source. Love standards. And prioritize simplicity and readability while serving content.</p>
+					</div>
+
+					<!-- 按钮组 -->
+					<form class="form-inline" role="form">
+						<div class="row" style="background-color: #e6e6e6;border: 1px solid #ccc !important;color: #000;padding: 10px;margin-bottom: 10px;">
+							<div class="m-bot15 col-lg-12 form-group" style="padding: 0px;">
+								<button type="button" class="btn btn-success btn-sm js-btn-addUser" id="fileUploadBtn">
+		                        	<i class="fa fa-plus"></i>&nbsp;&nbsp;上传文件
+		                        </button>
+							</div>
+						</div>
+					</form>
+
+					
+				</div>
+				
+				<!-- 模态框（Modal） -->
+				<!-- 
+				1. 当调用fileUploadShow()时，先remove掉modal，再构造新的modal
+				  1.1. 调用文件上传的初始化程序（合并配置项）
+
+				 -->
+				<div class="modal fade" id="fileUploladModal" role="dialog" data-backdrop="static"  data-keyboard="false" aria-hidden="true">
+				    <div class="modal-dialog">
+                		<div class="modal-content">
+                   			<div class="modal-header">
+                        		<button type="button" class="close" data-dismiss="modal">×</button>
+                        		<p>上传文件</p>
+                    		</div>
+                    		<div class="modal-body">
+								<form id="fileuploadForm" method="POST" enctype="multiple/form-data">
+									<div class="container-fluid">
+										<div class="row" style="margin-bottom: 10px;">
+											<span class="btn btn-default fileinput-button">
+										        <i class="glyphicon glyphicon-plus"></i>
+										        <span>选择文件</span>
+										        <input id="fileupload" type="file" name="files[]" multiple>
+										    </span>
+											<button type="reset" class="btn btn-default cancel">
+							                    <i class="glyphicon glyphicon-trash"></i>
+							                    <span>清空</span>
+							                </button>
+										    <button type="button" class="btn btn-primary start" id="startUploadBtn">
+							                    <i class="glyphicon glyphicon-upload"></i>
+							                    <span>开始上传</span>
+							                </button>
+										</div>
+										<div class="row">
+											<div id="files" class="files"></div>
+										</div>
+										<div class="row">
+											<div id="progress" class="progress" style="display: none;">
+										        <div class="progress-bar progress-bar-success"></div>
+										    </div>
+										</div>
+									</div>	
+								</form>
+                    		</div>
+		                    <div class="modal-footer">
+		                        <a href="#" class="btn btn-primary" data-dismiss="modal">保存</a>
+		                        <a href="#" class="btn btn-default" data-dismiss="modal">关闭</a>
+		                    </div>
+            			</div>
+				    </div><!-- /.modal -->
+		<footer>
+	        <p>© Company 2012</p>
+	    </footer>
+
+		<!-- 引入第三方类库 -->
+		<script type="text/javascript" src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/lib/bootstrap/bootstrap-3.3.6.min.js"></script>
+		<script type="text/javascript" src="../js/lib/bootbox.min.js"></script>
+
+		<!-- fileupload lib -->
+		<script type="text/javascript" src="../js/lib/jquery-upload-plugin/js/vendor/jquery.ui.widget.js"></script>
+		<!-- <script src="//blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script> -->
+		<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+		<script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-upload-plugin/js/jquery.iframe-transport.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-upload-plugin/js/jquery.fileupload.js"></script>
+		
+		<script type="text/javascript" src="../js/lib/jquery-upload-plugin/js/jquery.fileupload-process.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-upload-plugin/js/jquery.fileupload-image.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-upload-plugin/js/jquery.fileupload-audio.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-upload-plugin/js/jquery.fileupload-video.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-upload-plugin/js/jquery.fileupload-validate.js"></script>
+		<!-- <script type="text/javascript" src="../js/lib/jquery-upload-plugin/js/jquery.fileupload-ui.js"></script> -->
+		
+		<!-- 引入自定义工具类 -->
+		<script type="text/javascript" src="../js/common/toast.js"></script>
+		<script type="text/javascript" src="../js/app/base.js"></script>
+		<!-- TODO : 引入当前页面脚本 -->
+		<script type="text/javascript">
+			$(function(){
+				/*
+				{ 
+					mixFileSize : 0,	//最小文件限定
+					maxFileSize : 5000000,	//最大文件限定
+					acceptFileTypes : /(\.|\/)(gif|jpe?g|png)$/i,	//文件类型限制
+					autoUpload	: false,//是否选择文件后自动上传 
+					maxNumberOfFiles : 1,//上传文件数量限制
+					sequentialUploads: true,
+					dropZone: $(document),	//拖拽区域
+				}
+				 */
+				/*
+				<div class="row">
+					<div class="file-list-container">
+						<div class="file-list-column">
+							sdfsdf
+						</div>
+						<div class="file-list-column">
+							dddd
+						</div>
+						<div class="file-list-column">
+							<span>fileName</span>
+						</div>
+						<div class="file-list-column">
+							fff
+						</div>
+					</div>
+				</div>
+				 */
+				
+				var fileDataList = [];
+				$("#startUploadBtn").prop('disabled','true');
+
+				//全部上传
+				$("button.start").click(function(){
+					// console.log('all upload come in!' + fileDataList.length);
+					fileDataList.forEach(function(data){
+						data.submit();
+					});
+					// $("#fileupload").fileupload('send',{files : fileDataList});
+					fileDataList = [];	//置空
+				});
+
+				//全部清空
+				$('button.cancel').click(function(){
+					console.log('cancel come in');
+					try{
+						var file_list = $('.file-list-container');
+						console.log(file_list);
+
+						$.each(file_list,function(index,widget){
+							// $(widget).slideUp(200,function(){
+							// 	$(widget).css('display','none');
+								$(widget).remove();
+							// });
+						});
+						fileDataList = [];
+						$("#startUploadBtn").prop('disabled','true');
+					}catch(e){
+						console.log(e);
+					}
+				});
+
+				//清除单个
+				function delItem(index){
+					// alert('cancel come in');
+					$(this).remove();
+					fileDataList.splice(index,1);
+				}
+
+
+				// $('<p/>').text('api test').appendTo('#leaderboard');
+				$("#fileUploadBtn").click(function(){
+					$("#fileUploladModal").modal("show");
+
+					//fileupload config
+					$('#fileupload').fileupload({
+						url : 'http://jquery-file-upload.appspot.com/223',
+						dataType: 'json',
+						autoUpload: false,
+						acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+						maxFileSize: 999000,
+						dropZone : $("#files"),
+						formData : {'id':2333}
+					}).on('fileuploadadd',function(e,data){
+						//文件列表容器
+						var filesContainer = $('<div class="file-list-container"/>');
+						var fileRowColumn = $('<div class="file-list-column"/>');
+						
+						//遍历选择的文件 
+						$.each(data.files,function(index,file){
+							//勾选框
+							var fileCheckBox = fileRowColumn.clone().append($('<input type="checkbox"/>'));
+							//预览图
+							var fileCanvas = fileRowColumn.clone().append($('<img/>'));
+							//文件名
+							var fileName = fileRowColumn.clone().append($('<span/>').text(file.name));
+							//操作项
+							var fileOperation = fileRowColumn.clone().append('<a href="javascript:void(0);" id="link_' + index + '">删除</a>');
+							//将每一行构建好放入容器 .append(fileCheckBox)
+							filesContainer.append(fileCanvas).append(fileName).append(fileOperation);
+
+							$('#link_'+index).on('click', { filename: file.name, files: data.files }, function(event) {
+								console.log('del come in');
+				                event.preventDefault();
+				                // var uploadFilesBox = $("#files");
+				                // var remDiv = $(document.getElementById("fileDiv_" + event.data.filename));
+				                var remDiv = $(this).parent('.file-list-container');
+				                remDiv.remove();
+				                data.files.length = 0; //zero out the files array                                     
+				            });
+
+							// console.log(fileRow);
+							// filesContainer.append(fileRow);
+							// console.log(filesContainer);
+						});
+						//最终容器放入context
+						filesContainer.appendTo('#files');
+						//放入文件栈中
+						fileDataList.push(data);
+
+						$("#startUploadBtn").removeAttr('disabled');
+						// data.submit();
+					}).on('fileuploadprogressall', function (e, data) {
+						//重新显示进度条
+						var progress_widget = $('#progress');
+						progress_widget.slideDown(200,function(){
+							progress_widget.css('display','block');	
+						});
+				        var progress = parseInt(data.loaded / data.total * 100, 10);
+				        $('#progress .progress-bar').css(
+				            'width',
+				            progress + '%'
+				        );
+				    }).on('fileuploaddone', function (e, data) {
+				        $.each(data.result.files, function (index, file) {
+				            if (file.url) {
+				            	console.log('upload file url:'+file.url);
+				                // var link = $('<a>')
+				                //     .attr('target', '_blank')
+				                //     .prop('href', file.url);
+				                // $(data.context.children()[index])
+				                //     .wrap(link);
+				            } else if (file.error) {
+				            	console.log('upload error:'+file.error);
+				                var error = $('<span class="text-danger"/>').text(file.error);
+				                $(data.context.children()[index])
+				                    .append('<br>')
+				                    .append(error);
+				            }
+				        });
+				    }).on('fileuploadfail', function (e, data) {
+				        $.each(data.files, function (index) {
+				            var error = $('<span class="text-danger"/>').text('File upload failed.');
+				            console.log('fileuploadfail:'+file.error);
+				            // $(data.context.children()[index])
+				            //     .append('<br>')
+				            //     .append(error);
+				        });
+				    });
+				});
+
+				/*
+				var uploadButton = $('<button/>')
+	            .addClass('btn btn-primary')
+	            .prop('disabled', true)
+	            .text('Processing...')
+	            .on('click', function () {
+	                var $this = $(this),
+	                    data = $this.data();
+	                $this
+	                    .off('click')
+	                    .text('Abort')
+	                    .on('click', function () {
+	                        $this.remove();
+	                        data.abort();
+	                    });
+	                data.submit().always(function () {
+	                    $this.remove();
+	                });
+	            });
+
+				$('#fileupload').fileupload({
+					url : 'http://jquery-file-upload.appspot.com/',
+					dataType: 'json',
+					autoUpload: false,
+					acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+					maxFileSize: 999000
+				}).on('fileuploadadd', function (e, data) {
+			        data.context = $('<div/>').appendTo('#files');
+			        $.each(data.files, function (index, file) {
+			            var node = $('<p/>').append($('<span/>').text(file.name));
+			            if (!index) {
+			                node.append('<br>').append(uploadButton.clone(true).data(data));
+			            }
+			            node.appendTo(data.context);
+			        });
+			    }).on('fileuploadprocessalways', function (e, data) {
+			        var index = data.index,
+			            file = data.files[index],
+			            node = $(data.context.children()[index]);
+			        if (file.preview) {
+			            node
+			                .prepend('<br>')
+			                .prepend(file.preview);
+			        }
+			        if (file.error) {
+			            node
+			                .append('<br>')
+			                .append($('<span class="text-danger"/>').text(file.error));
+			        }
+			        if (index + 1 === data.files.length) {
+			            data.context.find('button')
+			                .text('Upload')
+			                .prop('disabled', !!data.files.error);
+			        }
+			    }).on('fileuploadprogressall', function (e, data) {
+			        var progress = parseInt(data.loaded / data.total * 100, 10);
+			        $('#progress .progress-bar').css(
+			            'width',
+			            progress + '%'
+			        );
+			    }).on('fileuploaddone', function (e, data) {
+			        $.each(data.result.files, function (index, file) {
+			            if (file.url) {
+			                var link = $('<a>')
+			                    .attr('target', '_blank')
+			                    .prop('href', file.url);
+			                $(data.context.children()[index])
+			                    .wrap(link);
+			            } else if (file.error) {
+			                var error = $('<span class="text-danger"/>').text(file.error);
+			                $(data.context.children()[index])
+			                    .append('<br>')
+			                    .append(error);
+			            }
+			        });
+			    }).on('fileuploadfail', function (e, data) {
+			        $.each(data.files, function (index) {
+			            var error = $('<span class="text-danger"/>').text('File upload failed.');
+			            $(data.context.children()[index])
+			                .append('<br>')
+			                .append(error);
+			        });
+			    }).prop('disabled', !$.support.fileInput)
+			        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+			    */
+			});
+		</script>
+	</body>
+</html>

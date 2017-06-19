@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<meta http-equiv="X-UA-Compatible">
+		<title>联合保理后台管理系统</title>
+
+		<!--common-->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"  />
+		<link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap-responsive-2.3.2.css">
+		<!-- base.css -->
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+	</head>
+
+	<body class="Site">
+		<!-- 固定的的头部区域 -->
+		<div class="navbar navbar-fixed-top app-header">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="row">
+						<div class="span2">
+							<div class="navbar-header">
+						        <a class="navbar-brand" href="#">联合保理</a>
+						    </div>
+						</div>
+						<ul class="nav navbar-nav">
+				            <li class="active"><a href="#">首页</a></li>
+				            <li><a href="#">分户账管理</a></li>
+				            <li><a href="#">托收</a></li>
+				            <li><a href="#">坏账担保</a></li>
+				            <li><a href="#">融资</a></li>
+				        </ul>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<div class="container app-frame Site-content">
+			<div class="row">
+				<!-- Nav -->
+				<div class="span3 app-nav">
+					<ul class="main-navigation-menu">
+						<li class="menu-list active">
+	                        <a href="#">
+	                            <span class="title"> 首页 </span></span>
+	                        </a>
+	                    </li>
+	                    <li class="menu-list">
+	                        <a href="javascript:void(0);">
+	                            <span class="title"> 控件 </span><i class="icon-arrow"></i></span>
+	                        </a>
+	                        <ul class="sub-menu" style="display: none;">
+	                            <li>
+	                                <a href="./templates/grid.html" class="close-sidebar-left">
+	                                    <span class="title"> 普通表格 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="./templates/tree.html">
+	                                    <span class="title"> 树型菜单 </span>
+	                                    <span class="badge badge-new">11</span>
+	                                </a>
+	                            </li>
+	                           	<li>
+	                                <a href="./templates/tree.html" class="set-boxed-layout">
+	                                    <span class="title"> 树列表 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="./templates/model.html" class="set-footer-fixed">
+	                                    <span class="title"> 模态框 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="./templates/button.html">
+	                                    <span class="title"> 按钮 </span>
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="./templates/fileupload.html">
+	                                    <span class="title"> 文件上传 </span>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </li>
+						<li class="menu-list">
+						    <a href="javascriptvoid(0);">
+						        <span class="title"> 2 Level Menu </span>
+						    </a>
+						    <ul class="sub-menu" style="display: none;">
+						        <li>
+						            <a href="javascript:;">Item 1 <i class="<icon-arrow></icon-arrow>"></i></a>
+						        </li>
+						        <li>
+						            <a href="#">Item 3</a>
+						        </li>
+						    </ul>
+						</li>	                    
+					</ul>
+				</div>
+				
+				<!-- Content -->
+				<div class="span9 app-content container-fluid">
+						<div class="leaderboard">
+							<h1>Learn. Practice. Develop.</h1>
+							<p>w3cschool offers web development tutorials. We believe in Open Source. Love standards. And prioritize simplicity and readability while serving content.</p>
+							<p>
+								<a class="btn btn-info btn-large">Join w3cschool now</a>
+							</p>
+						</div>
+					<div class="row-fluid">
+					    <div class="span4">
+							<h2>Learn</h2>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+							<p>
+								<a class="btn btn-danger  btn-large" href="#">Start Learning now</a>
+							</p>
+						</div>
+						<div class="span4">
+							<h2>Practice</h2>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+							<p>
+								<a class="btn btn-success btn-large" href="#">Start percticing now</a>
+							</p>
+						</div>
+						<div class="span4">
+							<h2>Develop</h2>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+							<p>
+								<a class="btn btn-success btn-large" href="#">Start developing now</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+	        <p>© Company 2012</p>
+	    </footer>
+
+		<!-- 引入第三方类库 -->
+		<script type="text/javascript" src="js/lib/jquery/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="js/lib/bootstrap/bootstrap-3.3.6.min.js"></script>
+		<script type="text/javascript" src="js/lib/bootbox.min.js"></script>
+		<!-- 引入自定义工具类 -->
+		<script type="text/javascript" src="js/common/toast.js"></script>
+		<script type="text/javascript" src="js/app/base.js"></script>
+		<!-- TODO : 引入当前页面脚本 -->
+	</body>
+</html>
